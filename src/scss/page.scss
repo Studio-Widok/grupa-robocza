@@ -1,0 +1,275 @@
+@font-face {
+  font-family: 'basier_circleregular';
+  src: url('./../../media/basiercircle-regular-webfont.eot');
+  src: url('./../../media/basiercircle-regular-webfont.woff2') format('woff2'),
+    url('./../../media/basiercircle-regular-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+/*----- STICKER -----*/
+body {
+  font-family: 'basier_circleregular', sans-serif;
+}
+
+#line-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 50%;
+  padding: 2em;
+}
+
+.line {
+  width: 50px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: transform 1s;
+
+  path {
+    stroke: #333;
+    stroke-width: 5;
+    fill: none;
+  }
+}
+
+.line-proto {
+  display: none;
+}
+
+#text-container {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  min-height: 100%;
+  width: 50%;
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  align-items: flex-end;
+  padding: 2em 7em 2em 2em;
+
+  &.active {
+    left: 0;
+  }
+}
+
+#text-container .main-text {
+  width: 80%;
+  max-width: 30em;
+  padding: 2em;
+  padding-top: 15em !important;
+}
+
+#side-text {
+  position: absolute;
+  right: 5.7em;
+  bottom: 5.7em;
+  transform-origin: 100% 100%;
+  transform: rotate(-90deg) translate(100%);
+  white-space: pre;
+  font-size: 0.7em;
+}
+
+#logo {
+  position: absolute;
+  top: -1em;
+  left: 3em;
+  width: 20%;
+  min-width: 10em;
+
+  path {
+    stroke-width: 20;
+    stroke: #fff;
+    fill: #fff;
+  }
+}
+
+#write-text {
+  position: absolute;
+  top: 3.7em;
+  right: 5em;
+  font-size: 0.7em;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    color: #ccc;
+
+    .tooltip-hover {
+      opacity: 1;
+    }
+  }
+
+  .tooltip-hover {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 200px;
+    text-align: right;
+    opacity: 0;
+    transition: 0.3s;
+    color: #ccc;
+  }
+
+  .tooltip {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 200px;
+    text-align: right;
+    display: none;
+    color: #ccc;
+    background-color: #333;
+  }
+}
+
+#write-text-mobile {
+  display: none;
+  position: absolute;
+  top: 3.7em;
+  right: 5em;
+  font-size: 0.7em;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#baza {
+  position: absolute;
+  top: 2.2em;
+  right: 5em;
+  font-size: 0.7em;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#sticker {
+  position: absolute;
+  right: 3em;
+  top: 9em;
+  line-height: 1.2;
+  color: #000;
+  text-transform: uppercase;
+
+  div {
+    font-size: 0.62em;
+    position: relative;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    width: 11em;
+    height: 3.5em;
+    padding: 0.5em 1em;
+    transition: 0.3s;
+
+    &:nth-child(1) {
+      transform: rotate(-10deg);
+    }
+
+    &:nth-child(2) {
+      transform: rotate(-1deg);
+    }
+  }
+
+  &:hover {
+    div {
+      background-color: #ddd;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  body {
+    font-size: 0.8em;
+  }
+
+  #text-container {
+    width: 600px;
+  }
+
+  #line-container {
+    left: 600px;
+  }
+}
+
+@media (max-width: 1500px) {
+  #text-container {
+    width: 750px;
+    padding: 1em 4em 1em 1em;
+  }
+
+  #line-container {
+    left: 750px;
+  }
+
+  .main-text {
+    padding: 1em;
+  }
+
+  #side-text {
+    bottom: 3em;
+    right: 3em;
+  }
+
+  #logo {
+    top: -2em;
+    left: 1em;
+  }
+
+  #write-text {
+    top: 3.2em;
+    right: 3em;
+  }
+
+  #write-text-mobile {
+    top: 3.2em;
+    right: 3em;
+  }
+
+  #baza {
+    top: 1.5em;
+    right: 3em;
+  }
+}
+
+@media (max-width: 810px) {
+  .main-text {
+    width: 90%;
+  }
+
+  #text-container {
+    width: 500px;
+  }
+
+  #line-container {
+    left: 500px;
+  }
+}
+
+@media (max-width: 710px) {
+  #text-container {
+    width: 100%;
+  }
+
+  #line-container {
+    left: 100%;
+  }
+
+  #write-text {
+    display: none;
+  }
+
+  #write-text-mobile {
+    display: block;
+  }
+}
+
+@media (max-width: 500px) {
+  .main-text {
+    width: 100%;
+  }
+}

@@ -1,6 +1,7 @@
 import './../scss/base.scss';
 import $ from 'cash-dom';
 import Clipboard from 'clipboard';
+import throttle from 'widok-throttle';
 
 function parseInput(input, def) {
   return void 0 === input ? def : input;
@@ -144,6 +145,8 @@ function resize() {
   }
 }
 resize();
+
+window.addEventListener('resize', throttle(100, resize));
 
 const states = [
   { r1: 0, r2: 0 },

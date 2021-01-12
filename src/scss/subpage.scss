@@ -1,0 +1,21 @@
+.item {
+  padding-bottom: 3em;
+
+  @media (max-width: 450px) {
+    width: 50%;
+  }
+
+  .item-img {
+    border: 1px solid #fff;
+    margin-bottom: 1em;
+  }
+
+  .item-name {
+    margin-bottom: 0.5em;
+    text-transform: uppercase;
+  }
+}
+
+#container-404 .content {
+  min-height: calc(100vh - 12em);
+}
